@@ -239,7 +239,7 @@ while response != 'q'
 
   else 
     puts "incorrect"
-  response = menu
+  
   end
-
+response = menu
 end
