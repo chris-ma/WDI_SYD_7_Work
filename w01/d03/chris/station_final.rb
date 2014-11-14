@@ -14,12 +14,18 @@ case depart_line
   when "n"
   puts " Pick a station to depart: 34th, N28th, N23rd, Union Square, N8th "
   depart_station = gets.chomp
+  #union_square = 3
+
   when "l"
   puts "Pick a station to depart: 8th, 6th, Union Square, 3rd, 1st "
   depart_station = gets.chomp 
+  #union_square = 2
+
 when "six"
   puts "Pick a station to depart: Grand Central, 33rd, 28th, 23rd, Union Square, Astor Place "
   depart_station = gets.chomp 
+  #union_square = 4
+
 end 
 
 puts "What line do you want to arrive? (n), (l), (six):"
@@ -38,8 +44,8 @@ when "six"
 end
 
 
-def journey 
-  to_union = subway[depart_station].index(depart_line)  ##needs to pull the right union square based on line selected
+def journey(depart_station, depart_line, arrive_station, arrive_line) 
+  to_union =  subway[depart_station].index(depart_line)  ##needs to pull the right union square based on line selected
   from_union = subway[arrive_station].index(arrive_line)
 #going to union
   union = to_union.index("Union Square")
