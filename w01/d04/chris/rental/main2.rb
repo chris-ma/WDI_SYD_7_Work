@@ -14,8 +14,6 @@ building_two_apartments = [
   Apartment.new(450.0, false, 1)
 ]
 
-
-
 buildings = [
 Building.new("old","123 main st",building_one_apartments),
 Building.new("old","123 main st",building_two_apartments)]
@@ -29,6 +27,7 @@ def building_list (buildings)
   end 
 end
 
+building = buildings[]
 
 def list_apartments(buildings)
   buildings.each do |building|
