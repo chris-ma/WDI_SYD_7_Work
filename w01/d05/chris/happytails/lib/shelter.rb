@@ -1,29 +1,40 @@
-module Shelter
+# require_relative "animal"
+# require_relative "client"
+# module Shelter
 
-  class Shelter
+    class Shelter
 
-    
+      attr_accessor :animal_array, :client_array
 
-    
-    def initialize(name, children, age, pets)
+        def initialize(animal_array = [], client_array = [])
+          
+          @animal_array = animal_array
+          @client_array = client_array
+        end
 
-  @name = name
-  @children = children
-  @age = age
-  @pets = pets
+        def animal_database 
+           if @animal_array == []
+            animal_information = "no animals"
+                else
+                  animal_information = @animal_array.inject("") do |animal_information, animal|
+                    animal_output << "Animal information: Name:#{@name} Age:#{@age} Gender:#{@gender} Species:#{@species}"
+                end
+            end
+            return animal_information
+
+        end    
+          
+        def client_database
+            if @client_array ==[]
+              client_information = "No clients"
+                 else  
+                  client_information = @client_array.inject("") do |client_input|
+                    client_input << "Client information: Name:#{@name} Childrem:#{@children} Age:#{@age} Pets:#{@pets}"
+                 end
+                 return client_information
+            end
+
+        end
 
     end
-
-
-
-
-    def to_s
-      p "Here's the client details that you have enquired:"
-      p "Name: #{self.name}"
-      p "Children: #{self.children}"
-      p "Age: #{self.age}"
-      p "Pets: #{self.pets}"
-
-    end
-  end
-end
+# end

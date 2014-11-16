@@ -4,32 +4,35 @@ module Animal
 
     # Set up accessors and mutators for the attributes of an Animal
     # attr_accessor sets up both for you
-    attr_accessor :name, :age, :gender, :species, :toys
+  attr_accessor :name, :age, :gender, :species, :toys
 
     # Used when creating a new animal.
     #   Example:
     #       Animal.new('Timmy', 4, 'male', 'toad')
     def initialize(name, age, gender, species, toys)
 
-  @name = name
-  @age = age
-  @gender = gender
-  @species = species
-  @toys = toys
+      @name = name
+      @age = age
+      @gender = gender
+      @species = species
+      @toys = toys
 
     end
 
 
-
-    # When we display the animal using puts or print, the
-    #   to_s method is called to pretty print an Animal
     def to_s
-      p "here's the animal that you have enquired:"
-      p "Name: #{self.name}"
-      p "Age: #{self.age}"
-      p "Gender: #{self.gender}"
-      p "Species: #{self.species}"
-
+      animal_information = "Animal information: Name:#{@name} Age:#{@age} Gender:#{@gender} Species:#{@species}"
     end
+
+    def animal_available?(animal_name)
+        if animal_name != @name
+          false
+        else
+          true
+        end
+    end
+
+
   end
+
 end

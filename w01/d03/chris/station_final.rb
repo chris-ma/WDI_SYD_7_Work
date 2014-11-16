@@ -44,23 +44,40 @@ when "six"
 end
 
 
-def journey(depart_station, depart_line, arrive_station, arrive_line) 
-  to_union =  subway[depart_station].index(depart_line)  ##needs to pull the right union square based on line selected
-  from_union = subway[arrive_station].index(arrive_line)
-#going to union
-  union = to_union.index("Union Square")
-  depart = to_union.index(depart_station)
-  journey1 = (union.to_i - depart.to_i).abs
-#union to destination
-  union2 = from_union.index("Union Square")
-  arrive = from_union.index(end_stop)
-  journey2 = (union2.to_i - arrive.to_i).abs
+    def journey_split(depart_station = 0, depart_line = 0, arrive_station = 0, arrive_line = 0) 
+      to_union =  subway[depart_station].index(depart_line)  ##needs to pull the right union square based on line selected
+      from_union = subway[arrive_station].index(arrive_line)
+    #going to union
+      union = to_union.index("Union Square")
+      depart = to_union.index(depart_station)
+      journey1 = (union.to_i - depart.to_i).abs
+    #union to destination
+      union2 = from_union.index("Union Square")
+      arrive = from_union.index(end_stop)
+      journey2 = (union2.to_i - arrive.to_i).abs
 
-  number = journey1 + journey2
+      number = journey1 + journey2
+    end
 
-end
+    def journey_same(depart_station, depart_line, arrive_station, arrive_line) 
+      newlist = []
+      newlist = subway.fetch(depart_line)
+      pos1 = newlist.index(depart_station)
+      pos2 = newlist.index(arrive_station)
+      return (pos1.to_i - pos2.to_i).abs
 
-journey
+  
+    end
+
+    def pick_track(depart_station, depart_line, arrive_station, arrive_line) 
+      if depart_line == arrive_line
+        journey_same(depart_station, depart_line, arrive_station, arrive_line) 
+        else
+        journey_split(depart_station, depart_line, arrive_station, arrive_line) 
+        end
+      end
+    
+
 
 
 puts "Your trip will be #{number} stops"

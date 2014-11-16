@@ -221,7 +221,7 @@ response = menu
 
 # This process should continue until the user selects a quit option from the menu
 while response != 'q'
-  case response
+  case menu
   when "b"
     basic_calc
   when "a"

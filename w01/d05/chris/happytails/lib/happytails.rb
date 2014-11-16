@@ -1,41 +1,72 @@
-system('clear')
-# module Shelter
+
 # Define Animal as a class
+require_relative = "shelter"
 require_relative = "animal"
 require_relative = "client"
-require_relative = "shelter"
-  
+
+              # shelter = Shelter.new("1","2")
+
+
       # class Start
-          def display_title
-            system('clear')
+
+
+          # def database
+          # @list_animals=[
+          #     Animal.new("Fido",2,"male","dog","bone")
+          # ]
+          # @list_clients= [
+          # Client.new("James",2,35,0,1)
+          # ]
+          # end
+
+
+           def menu
+            system 'clear'  #clears the screen
             puts "Shelter Program"
             puts "==============="
-          end
+            puts "1  | list animals" 
+            puts "2  | list clients"
+            puts "3  | input animal details"
+            puts "4  | input client details"
+            puts "q  | quit"
 
-          def database
-          @list_animals=[
-              Animal.new("Fido",2,"male","dog","bone")
-          ]
-          @list_clients= [
-          Client.new("James",2,35,0,1)
-          ]
-          end
+            gets.chomp.downcase
+
+            end
+
+             
+
+# class Happytrails
+
+           # def animal_database 
+           # if @animal_array == []
+           #  animal_information = "no animals"
+           #      else
+           #        animal_information = @animal_array.inject(" ") do |animal_information, animal|
+           #          animal_output << "Animal information: Name:#{@name} Age:#{@age} Gender:#{@gender} Species:#{@species}"
+           #      end
+           #  end
+           #  return animal_information
+
+           # end  
 
           def new_animal
-          p "please input your anminal details:"
-          p "name:"
+
+          p "please input your animal details:"
+          p "Animal name:"
           name = gets.chomp.to_s
-          p "age:"
+          p "Animal age:"
           age = gets.chomp.to_i
-          p "gender"
+          p "Animal gender"
           gender = gets.chomp.to_s
-          p "species"
+          p "Animal species"
           species = gets.chomp.to_s
           p "number of toys"
-          toys = gets.chomp.to_s
+          toys = gets.chomp.to_i
 
-          input_animal = Animal.new(name, age, gender, species, toys)
-          @list_animals << input_animal
+          @animal_array = Animal.new(name, age, gender, species, toys)
+          puts "You have added: #{shelter.animal_array}"
+
           end
 
           def new_client
@@ -49,6 +80,8 @@ require_relative = "shelter"
           p "pets"
           pets = gets.chomp.to_i
           
+          # @client_array << Client.new(name, children, age, pets)
+          # puts "You have added: #{shelter.client_array}"
           input_client = Client.new(name, children, age, pets)
           @list_clients << input_client
           end
@@ -65,62 +98,25 @@ require_relative = "shelter"
             
           # end
 
-
-
-          def menu
-            display_title
-            puts "a  | list animals" 
-            puts "c  | list clients"
-            puts "q  | quit"
-            puts "ia | input animal details"
-            puts "ic | input client details"
-
-            gets.chomp.downcase
-           end
-          #  user_choice = read_selection
-
-          #  case user_choice
-
-          #    when 'a'
-          #       list_animals(list_clients)
-          #     when 'c'
-          #       list_clients(list_clients)
-          #     when 'ia'
-          #       new_animal
-          #     when "ic"
-          #       new_client
-          #     end
-          #     running = true
-          #   end
-
-          # running = true
-          # while running 
-          #   running = menu
-          # end
-             
-           
-          # end
-
-          response = menu
-          while response != 'q'
-          case menu
-            when 'a'
-              database
-            when 'c'
-              list_clients
-            when 'ia'
-              new_animal
-            when "ic"
-              new_client
-            
-              else
-              puts "Please type in  'a' for animals, 'c' for clients or 'q' for quit"
-              
-              end
-            
-            end
-          
-      
       # end
 
+
+          response = menu
+                while response != 'q'
+                case response
+                  when '1'
+                  animal_database
+                  when '2'
+                  client_database
+                  when '3'
+                    new_animal
+                  when "4"
+                    new_client
+                  
+                    else
+                    p "Please try again"
+                    menu
+                    end
+                  
+                  end   
 # end
