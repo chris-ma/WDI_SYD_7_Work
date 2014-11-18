@@ -5,7 +5,7 @@
     attr_accessor :name, :children, :age, :pets
 
       
-      def initialize(name, children, age, pets = [])
+      def initialize(name, children, age, pets)
       @name = name
       @children = children
       @age = age
@@ -16,16 +16,13 @@
       client_information = "Client information: Name:#{@name} Childrem:#{@children} Age:#{@age} Pets:#{@pets}"
       end
   
-      # def 
-      #   if pets == []
+      def adopt
+      number_of_pets += 1
+      end
 
-      #     else
-
-      #     end
-          
-      #   end
-        
-      # end
+      def put_up_to_adopt
+      number_of_pets += 1
+      end
 
   end
 # end

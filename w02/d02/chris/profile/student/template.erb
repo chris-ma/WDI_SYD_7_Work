@@ -1,0 +1,19 @@
+ <!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>WEB DEVELOPMENT IMMERSIVE</title>
+            
+          <link rel="stylesheet" href="style.css">
+    
+    </head>
+    <body>
+      <h1>WEB DEVELOPMENT IMMERSIVE </h1>
+    <nav><a href="/students/<%= @student_name %>"><%= @student_name %></a></nav>
+
+    <%= yield %>
+
+    <footer>
+    Copyright 2014
+    </footer>
+    </body>

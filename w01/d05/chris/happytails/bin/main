@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require_relative "../lib/animal"
 require_relative "../lib/client"
-require_relative "../lib/happytails"
+require_relative "../lib/happytails_new"
 require_relative "../lib/shelter"
 
-happytails::Start.new.start
+HappyTails::Start.new.start

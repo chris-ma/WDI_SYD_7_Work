@@ -1,4 +1,4 @@
-module Animal
+# module Animal
 # Define Animal as a class
   class Animal
 
@@ -24,15 +24,11 @@ module Animal
       animal_information = "Animal information: Name:#{@name} Age:#{@age} Gender:#{@gender} Species:#{@species}"
     end
 
-    def animal_available?(animal_name)
-        if animal_name != @name
-          false
-        else
-          true
-        end
+    def add_client(client)
+      @client = client
     end
 
 
   end
 
-end
+# end
