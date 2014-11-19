@@ -2,6 +2,7 @@ require "sinatra"
 require "sinatra/reloader"
 
 get '/' do
+
   erb :main, layout: :template
 end
 
@@ -12,12 +13,14 @@ end
 
 
 get '/contact' do
+  
   erb :contact, layout: :template
 end
 
 
-get '/students' do
-  erb :student, layout: :template
+get '/student' do
+
+erb :student, layout: :template
 end
 
 
