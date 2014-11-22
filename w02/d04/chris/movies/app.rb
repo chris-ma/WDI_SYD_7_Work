@@ -33,43 +33,43 @@ get '/search' do
 
 end
 
-get "/movies/:id" do
-    if params[:id] #'If' movie title exists, do the next thing
-    search_term = params[:id]
-    response = HTTParty.get("http://www.omdbapi.com/?i=#{search_term}&tomatoes=true")
-    @movie = JSON(response) 
-    @movie_name = JSON(response)["Title"]
-    title_response = HTTParty.get("http://www.omdbapi.com/?s=#{@movie_name}")
-    @movie_list = JSON(title_response)["Search"]
-  end
-  erb :movies, layout: :layout
-end
+# get "/movies/:id" do
+#     if params[:id] #'If' movie title exists, do the next thing
+#     search_term = params[:id]
+#     response = HTTParty.get("http://www.omdbapi.com/?i=#{search_term}&tomatoes=true")
+#     @movie = JSON(response) 
+#     @movie_name = JSON(response)["Title"]
+#     title_response = HTTParty.get("http://www.omdbapi.com/?s=#{@movie_name}")
+#     @movie_list = JSON(title_response)["Search"]
+#   end
+#   erb :movies, layout: :layout
+# end
 
 
-# get '/movie/:imdb_id' do
-#     movie_id = params[:imdb_id]  
-#     response = HTTParty.get("http://www.omdbapi.com/?i=#{movie_id}&tomatoes=true")
-#     @movie = JSON(response)
-#     #calling the same search results as /search
-#     movie_title = @movie["Title"].gsub(" ", "+")   
-#     suggestions = HTTParty.get("http://www.omdbapi.com/?s=#{movie_title}")
-#     @movies_search = JSON(suggestions)["Search"]
+get '/movie/:imdb_id' do
+    movie_id = params[:imdb_id]  
+    response = HTTParty.get("http://www.omdbapi.com/?i=#{movie_id}&tomatoes=true")
+    @movie = JSON(response)
+    #calling the same search results as /search
+    movie_title = @movie["Title"].gsub(" ", "+")   
+    suggestions = HTTParty.get("http://www.omdbapi.com/?s=#{movie_title}")
+    @movies_search = JSON(suggestions)["Search"]
 #     #I'm feeling easy
 
 
-#   erb :movie
-
-# end
-
-get '/easy' do
-   if params[:easy]
-    search_term = params[:easy].gsub(" ", "+")   
-    response = HTTParty.get("http://www.omdbapi.com/?s=#{search_term}")
-    @movies = JSON(response)[1] #grab array out of hash
-    @smovies.to_s
-    end
-
-
-  erb :home
+  erb :movie
 
 end
+
+# get '/easy' do
+#    if params[:easy]
+#     search_term = params[:easy].gsub(" ", "+")   
+#     response = HTTParty.get("http://www.omdbapi.com/?s=#{search_term}")
+#     @movies = JSON(response)[1] #grab array out of hash
+#     @smovies.to_s
+#     end
+
+
+#   erb :home
+
+# end
