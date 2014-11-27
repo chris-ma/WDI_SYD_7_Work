@@ -1,13 +1,10 @@
-<h2>
-  
-  <%= @animal.name %>
-</h2>
+<h2><%= @animal.name %></h2>
 <ul>
-
-<li>Species: <%= @animal.species %></li>
-<li>Breed: <%= @animal.breed %></li>
-<li>Arrival time:<%= @animal.arrival_time %></li>
-<li>Departure time:<%= @animal.departure_time %></li>
-<li>Age: <%= @animal.age %></li>
-<li>Gender: <%= @animal.sex %></li>
+<li><strong>Species: </strong><%= @animal.species %></li><br>
+<li><strong>Breed: </strong><%= @animal.breed %></li><br>
+<li><strong>Arrived at the Center: </strong><%= @animal.arrival_time %></li><br>
+<li><strong>Last day at the Centre: </strong><%= @animal.departure_time%></li><br>
+<li><strong>Species: </strong><%= @animal.sex %></li>
 </ul>
+
+<%= link_to 'Back', animals_path %>

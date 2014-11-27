@@ -1,33 +1,33 @@
-<h1>New animal</h1>
+<h1>Edit animal</h1>
  
-<%= form_for :animal, url: animals_path do |f| %>
+<%= form_for @animal do |f| %>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
   <p>
     <%= f.label :species %><br>
-    <%= f.text_field :species %>
+    <%= f.text_area :species %>
   </p>
  <p>
     <%= f.label :breed %><br>
-    <%= f.text_field :breed %>
+    <%= f.text_area :breed %>
   </p>
    <p>
     <%= f.label :arrival_time %><br>
-    <%= f.text_field :arrival_time %>
+    <%= f.text_area :arrival_time %>
   </p>
    <p>
     <%= f.label :departure_time %><br>
-    <%= f.text_field :departure_time %>
+    <%= f.text_area :departure_time %>
   </p>
     <p>
     <%= f.label :sex %><br>
-    <%= f.text_field :sex %>
+    <%= f.text_area :sex %>
   </p>
   <p>
     <%= f.submit %>
   </p>
-  <% end %>
-
+<% end %>
+ 
 <%= link_to 'Back', animals_path %>
