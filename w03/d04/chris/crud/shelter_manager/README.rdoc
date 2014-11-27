@@ -1,3 +1,20 @@
+As a shelter owner
+
+I would like to manage my pets at my shelter
+So that i can work efficiently
+
+Scenario: list animals
+given 5 dogs exist
+and 3 cats
+when I go to a list of animals
+then I should see  the 5 dogs
+and I should see 3 cats
+
+
+
+
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
