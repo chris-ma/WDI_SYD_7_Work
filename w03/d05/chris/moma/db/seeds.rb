@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Artist.create({
-  first_name:"Divida",
+davida = Artist.create({
+  first_name:"Davida",
   last_name:"Allan",
   period:"Post Modern",
   nationality:"Australian",
@@ -15,30 +15,30 @@ Artist.create({
   image:"http://c300221.r21.cf1.rackcdn.com/davida-allen-1951-australia-the-rude-painting-or-michael-and-me-oil-on-canvas-1645-x-2505-cm-1383896094_org.jpg"
 
   })
-Artist.create({
-  first_name:"Divida",
-  last_name:"Allan",
-  period:"Post Modern",
-  nationality:"Australian",
-  date_of_birth:"20/10/1953",
-  image:"http://c300221.r21.cf1.rackcdn.com/davida-allen-1951-australia-the-rude-painting-or-michael-and-me-oil-on-canvas-1645-x-2505-cm-1383896094_org.jpg"
+
+davida.paintings.create({
+  title: "Lorem ipsum",
+  year: "1970",
+  medium: "oil on board",
+  style: "cubist",
+  image: "http://c300221.r21.cf1.rackcdn.com/davida-allen-1951-australia-the-rude-painting-or-michael-and-me-oil-on-canvas-1645-x-2505-cm-1383896094_org.jpg"
 
   })
-Artist.create({
-  first_name:"Divida",
-  last_name:"Allan",
-  period:"Post Modern",
-  nationality:"Australian",
-  date_of_birth:"20/10/1953",
-  image:"http://c300221.r21.cf1.rackcdn.com/davida-allen-1951-australia-the-rude-painting-or-michael-and-me-oil-on-canvas-1645-x-2505-cm-1383896094_org.jpg"
+
+davida.paintings.create({
+  title: "hadoken",
+  year: "1970",
+  medium: "oil on board",
+  style: "cubist",
+  image: "http://c300221.r21.cf1.rackcdn.com/davida-allen-1951-australia-the-rude-painting-or-michael-and-me-oil-on-canvas-1645-x-2505-cm-1383896094_org.jpg"
 
   })
-Artist.create({
-  first_name:"Divida",
-  last_name:"Allan",
-  period:"Post Modern",
-  nationality:"Australian",
-  date_of_birth:"20/10/1953",
-  image:"http://c300221.r21.cf1.rackcdn.com/davida-allen-1951-australia-the-rude-painting-or-michael-and-me-oil-on-canvas-1645-x-2505-cm-1383896094_org.jpg"
+
+davida.paintings.create({
+  title: "Ka-mae-ha",
+  year: "1970",
+  medium: "oil on board",
+  style: "cubist",
+  image: "http://c300221.r21.cf1.rackcdn.com/davida-allen-1951-australia-the-rude-painting-or-michael-and-me-oil-on-canvas-1645-x-2505-cm-1383896094_org.jpg"
 
   })
