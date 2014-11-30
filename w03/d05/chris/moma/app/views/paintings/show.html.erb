@@ -15,6 +15,5 @@
 
     </ul>
 
-    <%= link_to 'Edit Painting Details', edit_painting_path  %>
-    <%= link_to 'Back to Homepage', root_path %>
-    <%= link_to 'Delete Painting', painting_path(@painting), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Edit', edit_painting_path  %>
+    <%= link_to 'Delete', painting_path(@painting), method: :delete, data: { confirm: 'Are you sure?' } %>

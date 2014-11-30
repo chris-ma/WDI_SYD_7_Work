@@ -10,7 +10,6 @@
     <h2>Period:</h2><%= @artist.period %><br><br>
     <h2>Date of Birth:</h2><%= @artist.date_of_birth %><br><br>
     <%= link_to 'Edit Artist', edit_artist_path %>
-    <%= link_to 'Back to Homepage', root_path %>
     <%= link_to 'Delete Artist', artist_path(@artist), method: :delete, data: { confirm: 'Are you sure?' } %>
   
         <h3><%= @artist.first_name + " " + @artist.last_name %>'s Paintings</h3>

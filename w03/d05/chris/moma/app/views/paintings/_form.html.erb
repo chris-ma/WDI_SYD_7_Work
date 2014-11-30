@@ -1,18 +1,5 @@
  <%= form_for @painting do |f| %>
 
-          <% if @painting.errors.any? %>
-          <div id="error_explanation">
-            <p>Oops, <%= pluralize(@painting.errors.count, "error") %> meant this didn't save.</p>
-
-            <ul>
-              <% @painting.errors.full_messages.each do |msg| %>
-              <li class="errors_list"><p class="bg-danger"><%= msg %></p></li>
-              <% end %>
-            </ul>
-
-          </div>  
-          <% end %> 
-
           <p>
             <%= f.label :title %><br/>
             <%= f.text_field :title %>
@@ -38,10 +25,12 @@
             <%= f.text_field :image %>
           </p>
 
-          <p>
-            <%= f.collection_select(:artist_id, Artist.all, :id, :first_name) %>
-          </p>
+          <p> 
+            <%= f.collection_select(:artist_id, Artist.all, :id, :first_name ) %>
 
+         
+          </p>
+<!-- http://stackoverflow.com/questions/10226357/f-collection-select-not-displaying-the-selected-value -->
 
           <p>
             <%= f.submit %>

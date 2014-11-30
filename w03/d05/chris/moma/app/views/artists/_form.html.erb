@@ -1,19 +1,6 @@
 
           <%= form_for @artist do |f| %>
 
-            <% if @artist.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@artist.errors.count, "error") %> meant this didn't save.</h2>
-
-              <ul>
-                <% @artist.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-                <% end %>
-              </ul>
-
-            </div>  
-            <% end %>  
-
             <p>
               <%= f.label :first_name %><br/>
               <%= f.text_field :first_name %>
@@ -36,7 +23,7 @@
 
             <p>
               <%= f.label :date_of_birth %><br/>
-              <%= f.text_field :date_of_birth %>
+              <%= f.date_field :date_of_birth %>
             </p>
 
             <p>
