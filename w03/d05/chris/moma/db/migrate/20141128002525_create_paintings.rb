@@ -8,6 +8,8 @@ class CreatePaintings < ActiveRecord::Migration
       t.text :image
       t.integer :artist_id
 
+      t.references :artist, index: true
+
       t.timestamps
     end
   end

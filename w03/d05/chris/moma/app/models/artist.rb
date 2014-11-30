@@ -1,5 +1,4 @@
 class Artist < ActiveRecord::Base
-  has_many :paintings
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  has_many :paintings, dependent: :destroy
+   validates :first_name, :last_name, :nationality, :period, presence: true
 end

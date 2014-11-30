@@ -1,16 +1,20 @@
 <h2><%= @painting.title %></h2>
-<ul>
-<li>
-<%= @painting.year %>
-</li>
-<li>
-<%= @painting.style %>
-</li>
-<li>
-<%= @painting.medium %>
-</li>
-<li>
-<%= @painting.image %>
-</li>
+    <ul>
+        <li>
+        <%= @painting.year %>
+        </li>
+        <li>
+        <%= @painting.style %>
+        </li>
+        <li>
+        <%= @painting.medium %>
+        </li>
+        <li>
+        <img src="<%= @painting.image %>">
+        </li>
 
-</ul>
+    </ul>
+
+    <%= link_to 'Edit Painting Details', edit_painting_path  %>
+    <%= link_to 'Back to Homepage', root_path %>
+    <%= link_to 'Delete Painting', painting_path(@painting), method: :delete, data: { confirm: 'Are you sure?' } %>
