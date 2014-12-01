@@ -15,5 +15,7 @@
         <h3><%= @artist.first_name + " " + @artist.last_name %>'s Paintings</h3>
     
         <% @painting.each do |painting| %>
-        <li><%= link_to painting.title, painting_path(painting)%></li>
+        <li><%= link_to painting.title, painting do %></li>
+    <%= image_tag 'image' %>
+        <!-- <li><%= link_to painting.title, painting_path(painting)%></li> -->
         <% end %>
